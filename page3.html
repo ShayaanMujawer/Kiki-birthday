@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You, Mi Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4680eb, #fad0c4);
+            text-align: center;
+            color: rgb(255, 255, 255);
+            padding: 50px;
+        }
+        .container {
+            max-width: 800px; /* Increased max-width */
+            margin: auto;
+            padding: 40px; /* Increased padding */
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .heart {
+            font-size: 45px;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .media-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        img.rounded-left {
+            border-radius: 20px;
+            max-width: 150px;
+            height: auto;
+            display: block;
+        }
+        .audio-wrapper {
+            padding: 8px 12px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            display: inline-block;
+        }
+        .btn-video {
+            display: inline-block;
+            padding: 10px 18px;
+            margin-left: 10px;
+            background-color: #ff69b4; /* hot pink */
+            color: #fff;
+            font-weight: bold;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(255,105,180,0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+        }
+        .btn-video:hover {
+            background-color: #ff1493; /* deep pink */
+            box-shadow: 0 6px 12px rgba(255,20,147,0.7);
+        }
+        audio {
+            outline: none;
+            vertical-align: middle;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .media-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            img.rounded-left {
+                max-width: 100%;
+                height: auto;
+                border-radius: 15px;
+            }
+            .btn-video {
+                margin-left: 0;
+                padding: 8px 14px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <h1 class="fade-in">Thank You, Mi Amor 🤧</h1>
+        <p class="fade-in">TBH I know I am not good with words buttt..... consider this as my way of thanking you.</p>
+        <p class="fade-in">(I know this might come across as cheesy but just bare with me like you always do☝️🖐️)</p>
+        <div class="heart">😌</div>
+        <div class="media-container">
+            <img src="mm.jpg" alt="Mi Amor's Picture" class="fade-in rounded-left">
+            <div class="audio-wrapper">
+                <audio autoplay controls>
+                    <source src="mm.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <a href="page4.html" class="btn-video" title="Aakhri Vaala">👉👈 Aakhri Vaala</a>
+        </div>
+    </div>
+</body>
+</html>
