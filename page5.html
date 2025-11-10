@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Song List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4680eb, #fad0c4);
+            color: white;
+            margin: 0;
+            padding: 50px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        li {
+            margin: 15px 0;
+        }
+        a.song-link {
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            user-select: none;
+            text-shadow: 0 0 5px rgba(255, 105, 180, 0.8);
+        }
+        a.song-link:hover {
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.9);
+        }
+        ul li.hearts {
+            position: relative;
+            padding: 10px 20px;
+        }
+        ul li.hearts a.song-link {
+            background: linear-gradient(135deg, #b22222, #ff6347) !important;
+            box-shadow: 0 4px 15px rgba(178, 34, 34, 0.6) !important;
+            text-shadow: 0 0 5px rgba(178, 34, 34, 0.8) !important;
+            color: #fff0f0 !important;
+        }
+        ul li.hearts a.song-link:hover {
+            background: linear-gradient(135deg, #ff6347, #b22222) !important;
+            box-shadow: 0 6px 20px rgba(178, 34, 34, 0.9) !important;
+            color: #fff0f0 !important;
+        }
+        ul li.flowers {
+            position: relative;
+            padding: 10px 20px;
+        }
+        ul li.flowers a.song-link {
+            background: linear-gradient(135deg, #ffda03, #f9d423);
+            box-shadow: 0 4px 15px rgba(255, 223, 0, 0.6);
+            text-shadow: 0 0 5px rgba(255, 223, 0, 0.8);
+            color: #665200 !important;
+        }
+        ul li.flowers a.song-link:hover {
+            background: linear-gradient(135deg, #f9d423, #ffda03);
+            box-shadow: 0 6px 20px rgba(255, 223, 0, 0.9);
+            color: #7a6a00 !important;
+        }
+        ul li.raindrops {
+            position: relative;
+            padding: 10px 20px;
+        }
+        ul li.ekladki a.song-link {
+            background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+            box-shadow: 0 4px 15px rgba(46, 70, 114, 0.6) !important;
+            text-shadow: 0 0 5px rgba(46, 70, 114, 0.8) !important;
+            color: #f1faee !important;
+        }
+        ul li.ekladki a.song-link:hover {
+            background: linear-gradient(135deg, #2a5298, #1e3c72) !important;
+            box-shadow: 0 6px 20px rgba(46, 70, 114, 0.9) !important;
+            color: #f1faee !important;
+        }
+        ul li.mitwa {
+            position: relative;
+            padding: 10px 20px;
+        }
+        ul li.mitwa a.song-link {
+            background: white;
+            color: #333 !important;
+            box-shadow: 0 4px 15px rgba(200, 200, 200, 0.6);
+            text-shadow: none;
+        }
+        ul li.mitwa a.song-link:hover {
+            background: #f0f0f0;
+            color: #222 !important;
+            box-shadow: 0 6px 20px rgba(180, 180, 180, 0.9);
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            ul {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+    <style>
+        ul li.orangrenz {
+            position: relative;
+            padding: 10px 20px;
+        }
+        ul li.orangrenz a.song-link {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b) !important;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.6) !important;
+            text-shadow: 0 0 5px rgba(255, 65, 108, 0.8) !important;
+            color: #fff0f0 !important;
+        }
+        ul li.orangrenz a.song-link:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c) !important;
+            box-shadow: 0 6px 20px rgba(255, 65, 108, 0.9) !important;
+            color: #fff0f0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your TOP 5💕</h1>
+        <ul>
+            <li class="hearts"><a href="me_gustas_tu_original_restore.html" class="song-link">🎵 Mє Gυѕтαѕ Tυ</a></li>
+            <li class="ekladki"><a href="ek_ladki_bheegi_bhagi_si.html" class="song-link">🎶 Єк Lα∂кι Bнєєgι Bнαgι Sι</a></li>
+            <li class="flowers"><a href="pretty_little_baby.html" class="song-link">🎤 Pяєттү Lιттℓє Bαвү</a></li>
+            <li class="orangrenz"><a href="o_rangrez.html" class="song-link">🎧 O Rαηgяєz</a></li>
+            <li class="mitwa"><a href="mitwa.html" class="song-link">🎼 Mιтωα</a></li>
+        </ul>
+    </div>
+</body>
+</html>

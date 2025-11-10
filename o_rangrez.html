@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>o rangrez</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            color: white;
+            margin: 0;
+            padding: 50px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        h1 {
+            width: 100%;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .audio-player {
+            flex: 1 1 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        audio {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            outline: none;
+        }
+        .lyrics {
+            flex: 1 1 300px;
+            max-width: 400px;
+            text-align: left;
+            font-size: 1.1em;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            overflow-y: auto;
+            max-height: 400px;
+            white-space: pre-wrap;
+            user-select: text;
+        }
+        a.back-link {
+            width: 100%;
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: background-color 0.3s ease;
+            user-select: none;
+            text-align: center;
+        }
+        a.back-link:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .audio-player, .lyrics {
+                max-width: 100%;
+            }
+            .lyrics {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>O Rangrez</h1>
+        <div class="audio-player">
+            <audio controls autoplay>
+                <source src="or.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="lyrics">
+            <pre>
+O rangrez, your colors shine bright
+Painting my world with pure delight
+Every shade tells a story true
+O rangrez, I’m lost in you
+
+Vibrant hues and gentle tones
+In your presence, I find my home
+O rangrez, your melody flows
+In every heart, your passion grows
+            </pre>
+        </div>
+        <a href="page5.html" class="back-link">← Back to Song List</a>
+    </div>
+</body>
+</html>
