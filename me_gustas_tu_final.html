@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Me gustas tu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            margin: 0;
+            padding: 50px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        h1 {
+            width: 100%;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        .audio-player {
+            flex: 1 1 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        audio {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            outline: none;
+        }
+        .lyrics {
+            flex: 1 1 300px;
+            max-width: 400px;
+            text-align: left;
+            font-size: 1.1em;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            overflow-y: auto;
+            max-height: 400px;
+            user-select: text;
+            color: white;
+        }
+        a.back-link {
+            width: 100%;
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            transition: background-color 0.3s ease;
+            user-select: none;
+            text-align: center;
+        }
+        a.back-link:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Me gustas tu</h1>
+        <div class="audio-player">
+            <audio controls>
+                <source src="me_gustas_tu.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="lyrics">
+            ¿Qué horas son, mi corazón?<br/>
+            Te lo dije bien clarito<br/>
+            Permanece a la escucha<br/>
+            Permanece a la escucha<br/>
+            Doce de la noche en La Habana, Cuba<br/>
+            Once de la noche en San Salvador, El Salvador<br/>
+            Once de la noche en Managua, Nicaragua<br/>
+            Me gustan los aviones, me gustas tú<br/>
+            Me gusta viajar, me gustas tú<br/>
+            Me gusta la mañana, me gustas tú<br/>
+            Me gusta el viento, me gustas tú<br/>
+            Me gusta soñar, me gustas tú<br/>
+            Me gusta la mar, me gustas tú<br/>
+            ¿Qué voy a hacer? Je ne sais pas<br/>
+            ¿Qué voy a hacer? Je ne sais plus<br/>
+            ¿Qué voy a hacer? Je suis perdu<br/>
+            ¿Qué horas son, mi

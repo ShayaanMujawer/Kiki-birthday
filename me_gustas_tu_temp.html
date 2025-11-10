@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Me gustas tu</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      color: white;
+      margin: 0;
+      padding: 50px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+    .karaoke {
+      font-size: 1.2em;
+      line-height: 1.6;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      max-height: 400px;
+      overflow-y: auto;
+      user-select: text;
+      color: black;
+      white-space: pre-wrap;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.4);
+      color: #fff;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    a.back-link:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  </style>
+  <!-- Include Karaoke.js or similar library from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/karaoke.js@1.0.0/dist/karaoke.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Me gustas tu</h1>
+    <audio id="audio" controls autoplay>
+      <source src="me_gustas_tu.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <pre id="karaoke" class="karaoke"></pre>
+    <a href="page5.html" class="back-link">← Back to Song List</a>
+  </div>
+
+  <script>
+    // Example lyrics in LRC format (time-tagged)
+    const lrcLyrics = \`
+[00:00.00]¿Qué horas son, mi corazón?
+[00:08.00]Te lo dije bien clarito
+[00:15.00]Permanece a la escucha
+[00:22.00]Permanece a la escucha
+[00:29.00]Doce de la noche en La Habana, Cuba
+[00:36.00]Once de la noche en San Salvador, El Salvador
+[00:43.00]Once de la noche en Managua, Nicaragua
+[00:50.00]Me gustan los aviones, me gustas tú
+[00:57.00]Me gusta viajar, me gustas tú
+[01:04.00]Me gusta la mañana, me gustas tú
+[01:11.00]Me gusta el viento, me gustas tú
+[01:18.00]Me gusta soñar, me gustas tú
+[01:25.00]Me gusta la mar, me gustas tú
+[01:32.00]¿Qué voy a hacer? Je ne sais pas
+[01:39.00]¿Qué voy a hacer? Je ne sais plus
+[01:46.00]¿Qué voy a hacer? Je suis perdu
+[01:53.00]¿Qué horas son, mi corazón?
+[02:00.00]Me gusta la moto, me gustas tú
+[02:07.00]Me gusta correr, me gustas tú
+[02:14.00]Me gusta la lluvia, me gustas tú
+[02:21.00]Me gusta volver, me gustas tú
+[02:28.00]Me gusta marihuana, me gustas tú
+[02:35.00]Me gusta colombiana, me gustas tú
+[02:42.00]Me gusta la montaña, me gustas tú
+[02:49.00]Me gusta la noche (me gustas tú)
+[02:56.00]¿Qué voy a hacer? Je ne sais pas
+[03:03.00]¿Qué voy a hacer? Je ne sais plus
+[03:10.00]¿Qué voy a hacer? Je suis perdu
+[03:17.00]¿Qué horas son, mi corazón?
+[03:24.00]¿Qué voy a hacer? Je ne sais pas
+[03:31.00]¿Qué voy a hacer? Je ne sais plus
+[03:38.00]¿Qué voy a hacer? Je suis perdu
+[03:45.00]¿Qué horas son, mi corazón?
+[03:52.00]¿Qué voy a hacer? Je ne sais pas
+[03:59.00]¿Qué voy a hacer? Je ne sais plus
+[04:06.00]¿Qué voy a hacer? Je suis perdu
+[04:13.00]¿Qué horas son, mi corazón?
+[04:20.00]¿Qué horas son, mi corazón?
+[04:27.00]¿Qué horas son, mi corazón?
+[04:34.00]¿Qué horas son, mi corazón?
+[04:41.00]¿Qué horas son, mi corazón?
+[04:48.00]¿Qué horas son, mi corazón?
+[04:55.00]Cuatro de la mañana
+[05:02.00]A la bin, a la ban, a la bin-bon-bam
+[05:09.00]A la bin, a la ban, a la bin-bon-bam
+[05:16.00]Obladí obladá obladí-da-da
+[05:23.00]A la bin, a la ban, a la bin-bon-bam
+[05:30.00]Radio Reloj
+[05:37.00]Cinco de la mañana
+[05:44.00]No todo lo que es oro brilla
+[05:51.00]Remedio chino e infalible
+\`;
+
+    // Initialize karaoke.js with audio and lyrics container
+    const audio = document.getElementById('audio');
+    const karaokeContainer = document.getElementById('karaoke');
+
+    const karaoke = new Karaoke({
+      audio: audio,
+      container: karaokeContainer,
+      lrc: lrcLyrics,
+      autoScroll: true,
+      highlightClass: 'highlight',
+      fontSize: '1.2em',
+      lineHeight: '1.6em',
+    });
+
+    karaoke.init();
+  </script>
+</body>
+</html>
