@@ -7,11 +7,42 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #43cea2, #185a9d);
+            background: linear-gradient(135deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            animation: rainbow 10s ease infinite;
             color: white;
             margin: 0;
             padding: 50px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body::before {
+            content: '🌈';
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            font-size: 4em;
+            opacity: 0.2;
+            animation: spin 5s linear infinite;
+        }
+        body::after {
+            content: '🎨';
+            position: absolute;
+            top: 25%;
+            right: 10%;
+            font-size: 3em;
+            opacity: 0.2;
+            animation: spin 7s linear infinite reverse;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         .container {
             max-width: 900px;
@@ -24,11 +55,24 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
+            animation: colorShift 4s ease-in-out infinite;
+        }
+        @keyframes colorShift {
+            0%, 100% { border-color: #ff0000; }
+            16.67% { border-color: #ff7f00; }
+            33.33% { border-color: #ffff00; }
+            50% { border-color: #00ff00; }
+            66.67% { border-color: #0000ff; }
+            83.33% { border-color: #4b0082; }
         }
         h1 {
             width: 100%;
             font-size: 2.5em;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ff0000, #ffff00, #0000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .audio-player {
             flex: 1 1 300px;
@@ -42,6 +86,10 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+        audio:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
         }
         .lyrics {
             flex: 1 1 300px;
@@ -57,6 +105,7 @@
             max-height: 400px;
             white-space: pre-wrap;
             user-select: text;
+            font-family: 'Georgia', serif;
         }
         a.back-link {
             width: 100%;
@@ -69,12 +118,13 @@
             border-radius: 12px;
             text-decoration: none;
             box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             user-select: none;
             text-align: center;
         }
         a.back-link:hover {
             background-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
         }
         @media (max-width: 700px) {
             .container {
@@ -92,6 +142,7 @@
             }
         }
     </style>
+
 </head>
 <body>
     <div class="container">
