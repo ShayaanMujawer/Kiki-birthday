@@ -23,26 +23,26 @@
             100% { background-position: 0% 50%; }
         }
         body::before {
-            content: '🌈';
+            content: '✨';
             position: absolute;
             top: 15%;
             left: 10%;
             font-size: 4em;
             opacity: 0.2;
-            animation: spin 5s linear infinite;
+            animation: float 5s ease-in-out infinite;
         }
         body::after {
-            content: '🎨';
+            content: '🌟';
             position: absolute;
             top: 25%;
             right: 10%;
             font-size: 3em;
             opacity: 0.2;
-            animation: spin 7s linear infinite reverse;
+            animation: float 7s ease-in-out infinite reverse;
         }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         .container {
             max-width: 900px;
