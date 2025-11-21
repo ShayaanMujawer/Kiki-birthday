@@ -25,6 +25,39 @@
             font-size: 2.5em;
             margin-bottom: 20px;
         }
+        .game-section {
+            margin-bottom: 30px;
+        }
+        .game-instructions {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .score {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .game-area {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .duck {
+            position: absolute;
+            font-size: 2em;
+            cursor: pointer;
+            animation: fly 3s linear infinite;
+        }
+        @keyframes fly {
+            from { left: -50px; }
+            to { left: calc(100% + 50px); }
+        }
+        #special-video {
+            display: none;
+        }
         video {
             width: 100%;
             max-width: 640px;
@@ -75,13 +108,50 @@
 <body>
     <div class="container">
         <h1>Happy Birthday Kiki ❤🎀  </h1>
-        <video controls preload="metadata" >
-            <source src="m.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        <p style="font-weight: bold; font-size: 1.4em;">Thank You For Always Responding To My "Hii"s And "Helloo"s 🫶</p>
+        <div class="game-section">
+            <div class="game-instructions">Play the flying duck game! Click on 5 ducks to unlock the special video.</div>
+            <div class="score">Ducks shot: <span id="score">0</span>/5</div>
+            <div class="game-area" id="game-area"></div>
+        </div>
+        <div id="special-video">
+            <video controls preload="metadata">
+                <source src="Comp 1_1080x1350.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <p style="font-weight: bold; font-size: 1.4em;">Thank You For Always Responding To My "Hii"s And "Helloo"s 🫶</p>
+        </div>
         <a href="page5.html" class="back-link">← Back to Song List</a>
-
     </div>
+
+    <script>
+        let score = 0;
+        const gameArea = document.getElementById('game-area');
+        const scoreDisplay = document.getElementById('score');
+        const specialVideo = document.getElementById('special-video');
+
+        function createDuck() {
+            const duck = document.createElement('div');
+            duck.className = 'duck';
+            duck.textContent = '🦆';
+            duck.style.top = Math.random() * (gameArea.clientHeight - 50) + 'px';
+            duck.addEventListener('click', () => {
+                duck.remove();
+                score++;
+                scoreDisplay.textContent = score;
+                if (score >= 5) {
+                    specialVideo.style.display = 'block';
+                    document.querySelector('.game-section').style.display = 'none';
+                }
+            });
+            gameArea.appendChild(duck);
+            setTimeout(() => {
+                if (duck.parentNode) {
+                    duck.remove();
+                }
+            }, 3000);
+        }
+
+        setInterval(createDuck, 2000);
+    </script>
 </body>
 </html>
